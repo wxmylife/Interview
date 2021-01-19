@@ -58,4 +58,22 @@
     * 5xx: 服务端错误 
   * Headers
     > 作用: HTTP消息的元数据(metadata)
+    
+    * Host
+      > 服务器主机地址
+    * Content-Type / Content-Length
+      > 内容的类型 / 内容的长度（字节）
+      
+      * text/html 
+        > html 文本,用于游览器页面响应
+        
+      * application/x-www-form-urlencoded
+        > 普通表单,encoded URL 格式
+
+      * multipart/form-data
+        > 多部分形式，一般用于传输包含二进制内容的多项内容
+
+      * application/json
+        >
+        
   * Body
