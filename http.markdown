@@ -74,6 +74,77 @@
         > 多部分形式，一般用于传输包含二进制内容的多项内容
 
       * application/json
-        >
-        
-  * Body
+        > json 形式，用于 Web Api 的响应或 POST/PUT 请求
+      
+      * image/jpeg / application/zip ...
+        > 单文件，用于 Web Api 响应或 POST/PUT 请求 
+
+    * Location
+      > 重定向的目标 URL
+
+    * User-Agent
+      > 用户代理
+      
+    * Range / Accept-Range
+      > 指定Body 的内容范围
+    
+    * Cookie / Set-Cookie
+      > 发送 Cookie / 设置 Cookie
+      
+    * Authorization
+      > 授权信息
+      
+    * Chunked Transfer Encoding 
+      > 分块传输编码，用于多线程下载，断点续传
+    
+      * Transfer-Encoding: chunked
+      * 表示 Body 长度无法确定，Content-Length 不能使用
+      * Body 格式如下:
+        ```
+        <length 1>
+        <data 1>
+        <length 2>
+        <data 2>
+        0
+        (最后传输0表示内容结束)
+        ```
+      * 目的：在服务器还未获取完整内容时，更快对客服端做出响应，减少用户等待 
+    
+    * Accept
+    > 客服端能接受的数据类型，如 text/html
+
+    * Accept-Charset
+    > 客户端接受的字符集，如 utf-8
+    
+    * Accept-Encoding
+    > 客户端接受的压缩编码类型，如 gzip
+      
+    * Content-Encoding
+    > 压缩类型，如 gzip
+  * Cache
+    * Cache 和 Buffer 的区别
+    > 缓存 和 缓冲
+    
+    * Cache-Control
+      > 服务器通知客户端缓存策略
+      
+      * no-cache
+      > **缓存但重新验证**:每次有请求发出时，缓存会将此请求发到服务器（该请求应该会带有与本地缓存相关的验证字段），服务器端会验证请求中所描述的缓存是否过期，若未过期（注：实际就是返回304），则缓存才使用本地缓存副本。 
+      * no-store
+      > **没有缓存**:缓存中不得存储任何关于客户端请求和服务端响应的内容。每次由客户端发起的请求都会下载完整的响应内容。
+      * max-age
+      > **可以缓存**:根据失效日期决定，可在失效日期之前使用
+      * private / public 
+      > 私有缓存和公共缓存
+    * Last-Modified 
+      > 资源上次修改的时间
+
+      * If-Modified-Since 
+      > 资源是否在上次时间点之后没有改过，使用 Cache,如果有改过则返回新资源
+    * Etag
+      * If-None-Match
+      > 咨询快照是否使用，不能使用则返回新数据
+      
+### RESTful HTTP
+  > 正确使用 HTTP
+
