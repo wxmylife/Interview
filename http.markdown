@@ -14,23 +14,23 @@
     > 请求行: Method + Path + HTTP version
     
     ```
-    请求行 --- GET /users HTTP/1.1
-    请求头 --- Host: api.xxx.com
-          --- Content-Type: text/plain
-          --- Content-Length: 234
-    请求体 --- body
+    请求行   --- GET /users HTTP/1.1
+    Headers --- Host: api.xxx.com
+            --- Content-Type: text/plain
+            --- Content-Length: 234
+    Body    --- body
     ```
   * 报文格式: Response
     > 状态行: HTTP version + status code + status message
     
     ```
-    状态行 --- HTTP/1.1 200 OK
-    响应头 --- content-type: application/json; charset=utf-8
-          --- cache-control: public, max-age=60, s-message=60
-          --- vary: Accept,Accept-Encoding
-          --- etag: xxx
-          --- content-encoding: gzip
-    响应体 --- json
+    状态行   --- HTTP/1.1 200 OK
+    Headers --- content-type: application/json; charset=utf-8
+            --- cache-control: public, max-age=60, s-message=60
+            --- vary: Accept,Accept-Encoding
+            --- etag: xxx
+            --- content-encoding: gzip
+    Body    --- json
     ```
   
   ---
@@ -39,13 +39,13 @@
   
   * Request method
     * GET
-      > 获取资源；没有 Body
+      > 获取资源；没有 Body；幂等（即反复调用多次时会得到相同的结果）
     * POST
       > 增加或者修改资源；有 Body
     * PUT
-      > 修改资源；有 Body；幂等（多次调用和一次调用相同）
+      > 仅用于修改资源；有 Body；幂等（多次调用和一次调用相同）
     * DELETE
-      > 删除资源；没有 Body 幂等
+      > 删除资源；没有 Body；幂等
     * HEAD
       > 获取信息（文件下载使用，获取文件信息）
   * Response status code
