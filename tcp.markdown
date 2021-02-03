@@ -40,5 +40,9 @@ st->op->op1->op2->op3->e
 * 客户端信任服务器后，和服务器协商对称秘钥
 * 使用对称秘钥开始通信
 
-![连接过程](images/banner_example.gif)
-  
+![连接过程](images/1611827077711.jpg)
+![连接过程](images/1611827357332.jpg)
+
+***参考资料***
+  * [SSL / TLS 工作原理和详细握手过程](https://segmentfault.com/a/1190000021559557)
+  * [HTTPS 原理图](https://segmentfault.com/a/1190000021559557)
